@@ -14,3 +14,9 @@
 ## Graphs and Networks
 
 [NetworkX](https://networkx.org/documentation/stable/tutorial.html)
+
+## Support Vector Machine
+
+- [PyTorch](https://pytorch.org/tutorials/)
+- [scikit-learn](https://scikit-learn.org/stable/getting_started.html)
+- [Python中的支持向量机SVM的使用（有实例）](https://www.cnblogs.com/luyaoblog/p/6775342.html)
