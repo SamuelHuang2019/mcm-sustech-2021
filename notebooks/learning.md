@@ -10,3 +10,7 @@
 - Convert the restrictions to **less than**
 
 - An upper bound in total, an equality in total, a range for each individual variables.
+
+## Graphs and Networks
+
+[NetworkX](https://networkx.org/documentation/stable/tutorial.html)
