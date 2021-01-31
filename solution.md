@@ -1,6 +1,6 @@
 <center>
 <font size=5>Team Control Number</font><br>
-<font color=red size=6>11912309</font><br>
+<font color=red size=6>2122216</font><br>
 <font size=5>Problem Chosen</font><br>
 <font color=red size=6>A</font>
 </center>
@@ -12,7 +12,7 @@
 <font size=6>Summary</font>
 </center>
 
->**Keywords**: keyword1; keyword2; keyword3; (list three to ten pertinent keywords specific to the article)
+> **Keywords**: keyword1; keyword2; keyword3; (list three to ten pertinent keywords specific to the article)
 
 ---
 
