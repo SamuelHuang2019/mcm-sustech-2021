@@ -32,71 +32,84 @@
 
 ---
 
-# 2 Assumptions
+# 2 Assumptions and Notations
+
+- **Assumption 1.** The
+
+> **Justification**: If
+
+- **Assumption 2.** The
+
+> **Justification**: If
+
+- **Assumption 3.** The
+
+> **Justification**: If
+
+| Symbol | Definition |
+| ------ | ---------- |
+
+>**Table 1**: Notations used in this literature
 
 ---
 
-# 3 Notations
+# 3 The Model
 
 ---
 
-# 4 The Model
+## 3.1 XXXX
+
+## 3.2 XXXX
+
+## 3.3 Improved Model
+
+### 3.3.1 Extra Symbols
+
+### 3.3.2 Additional Assumptions
+
+### 3.3.3 The Foundation of Model
 
 ---
 
-## 4.1 XXXX
-
-## 4.2 XXXX
-
-## 4.3 Improved Model
-
-### 4.3.1 Extra Symbols
-
-### 4.3.2 Additional Assumptions
-
-### 4.3.3 The Foundation of Model
+# 4 Solution and Result
 
 ---
 
-# 5 Solution and Result
+# 5 Model Analysis
+
+## 5.1 Sensitivity Analysis
+
+### 5.1.1 XXXX
+
+### 5.1.2 XXXX
+
+## 5.2 Strengths and Weaknesses
 
 ---
 
-# 6 Model Analysis
+# 6 Conclusions
 
-## 6.1 Sensitivity Analysis
+## 6.1 Conclusions of the problem
 
-### 6.1.1 XXXX
+## 6.2 Methods used in our models
 
-### 6.1.2 XXXX
-
-## 6.2 Strengths and Weaknesses
+## 6.3 Applications of our models
 
 ---
 
-# 7 Conclusions
+# 7 Future Work
 
-## 7.1 Conclusions of the problem
+## 7.1 Another model
 
-## 7.2 Methods used in our models
+### 7.1.1 The limitations of XXX theory
 
-## 7.3 Applications of our models
+### 7.1.2
 
----
+### 7.1.3
 
-# 8 Future Work
+### 7.1.4
 
-## 8.1 Another model
-
-### 8.1.1 The limitations of XXX theory
-
-### 8.1.2
-
-### 8.1.3
-
-### 8.1.4
-
-## 8.2 Another XXX of
+## 7.2 Another XXX of
 
 ---
 
