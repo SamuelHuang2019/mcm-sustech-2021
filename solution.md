@@ -26,6 +26,8 @@
 
 ## 1.1 Problem Background
 
+The registration fee for MCM/ICM is $100 per team. Please register only the teams that will take part in the contest. Registration fees are non-refundable. We accept payment via Credit Card, and payment must be made via our secure web site. Our secure site will process your credit card payment, so your credit card number is protected. Our system will not store your credit card number after it processes your payment. We regret that we are not able to accept other payment forms at this time.
+
 ## 1.2 Problem Restatement
 
 ## 1.3 Our Work
@@ -48,6 +50,7 @@
 
 | Symbol | Definition |
 | ------ | ---------- |
+|        |            |
 
 >**Table 1**: Notations used in this literature
 

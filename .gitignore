@@ -128,5 +128,16 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Workspace folder
 .vscode
 .idea
+
+# TeX temp files
+*.log
+*.aux
+*.fdb_latexmk
+*.synctex(busy)
+*.out
+*.toc
+*.synctex.gz
+_minted-main
