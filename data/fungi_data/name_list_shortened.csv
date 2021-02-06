@@ -23,7 +23,7 @@ V11,X73
 V12,X81
 Temp. niche width,temp.niche.width
 Optimal temp.,temp.temp.at.max.rate
-Growth rate at optimal temp., temp.max.rate
+Growth rate at optimal temp.,temp.max.rate
 Temp. niche min,temp.niche.low
 Temp. niche max,temp.niche.high
 Moist. niche width,water.niche.width
