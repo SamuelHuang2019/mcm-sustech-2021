@@ -1,37 +1,56 @@
-\section{Assumptions and Notations}\label{sec:assump}
+\section{Basic Assumptions and Notations}\label{sec:assump}
 
 Our model is based on several approximate but reasonable assumptions. For a certain ecological configuration in restricted region, such as the decomposition process of a log dominated by fungus, it is equivalent for considering the quantity of fungus individual, biomass or population density. Therefore, our modeling is based on the population density of each species of fungus.
 
-\paragraph{Assumption 1}: Under fixed environmental condition, the ability of a fungi population for decomposing ground litter and woody fibers is proportional to its population density, the coefficient of which is a constant.
+Since our modeling is composed of several different parts, other necessary assumptions may be found in their own sections. 
 
-\textbf{Justification}: The rate of decomposition is rather complicated, and with temporal memory, since it is in fact determined by the total amount of enzyme exists. In addition, two or more categories of enzyme may interact with each other or together to boost or resist the decomposition reaction. However, to simplify the problem, we ignore such mechanisms, and include all the other factors that affects the biological vitality of the fungus in a single parameter.
+\begin{definition}
+Under fixed environmental condition, the ability of a fungi population for decomposing ground litter and woody fibers is proportional to its population density, the coefficient of which is a constant.
+\end{definition}
 
-\paragraph{Assumption 2}: The constant mentioned above, hence the ability of different fungus species for decomposition, is only related to environmental temperature and humidity.
+\paragraph{Justification} The rate of decomposition is rather complicated, and with temporal memory, since it is in fact determined by the total amount of enzyme exists. In addition, two or more categories of enzyme may interact with each other or together to boost or resist the decomposition reaction. However, to simplify the problem, we ignore such mechanisms, and include all the other factors that affects the biological vitality of the fungus in a single parameter.
 
-\textbf{Justification} According to the problem given and other researches, temperature and humidity are the two dominating factors for fungus community, and should be taken into consideration.
+\begin{definition}
+The constant mentioned above, hence the ability of different fungus species for decomposition, is only related to environmental temperature and humidity.
+\end{definition}
 
-\paragraph{Assumption 3} The vital activity of fungus community, that is, the product of metabolization, has no effect on the environment humidity and temperature.
+\paragraph{Justification} According to the problem given and other researches, temperature and humidity are the two dominating factors for fungus community, and should be taken into consideration.
 
-\textbf{Justification} In nature circumstances, the decomposition process happens in open air, the heat and moisture produced or absorbed by fungus can be promptly carried off or replenished  by the external environment, hence the local environment dominates the conditions of the growth of fungus community.
+\begin{definition}
+The vital activity of fungus community, that is, the product of metabolization, has no effect on the environment humidity and temperature.
+\end{definition}
 
-\paragraph{Assumption 4} The decomposition is dominated by the fungus community, and no other species have effect on the system.
+\paragraph{Justification} In nature circumstances, the decomposition process happens in open air, the heat and moisture produced or absorbed by fungus can be promptly carried off or replenished  by the external environment, hence the local environment dominates the conditions of the growth of fungus community.
 
-\paragraph{Assumption 5} The inter-species relation among the populations in the community is merely competition.
+\begin{definition}
+The decomposition is dominated by the fungus community, and no other species have effect on the system.
+\end{definition}
 
-\textbf{Justification} Other inter-species relations such as mutualism, parasitism and predation are rarely seen among fungus. Considering only competition enables us to utilize existed models.
+\begin{definition} The inter-species relation among the populations in the community is merely competition.
+\end{definition}
+
+\paragraph{Justification} Other inter-species relations such as mutualism, parasitism and predation are rarely seen among fungus. Considering only competition enables us to utilize existed models.
 
 \paragraph{}
-Based on these assumptions, we defined the following notations in modeling.
+Based on these assumptions, we defined the following notations in modeling. Other notations may be defined in their own according sections.
 
-\paragraph{}
-\textbf{Assumption 3}: The
 
-\textbf{Justification}: If
-
-\begin{center}\begin{tabular}{ccc}
-    \toprule
-    Symbol & Definition & Unit \\
-    \midrule
-    a & b & c \\
-    \bottomrule
-\end{tabular}\end{center}
+\begin{table}[h]
+    \begin{center}
+        \caption{Notations and definitions}
+        \begin{tabular}{cl}
+            \toprule
+            Symbol           & Definition                                                                 \\
+            \midrule
+            $E$              & Total decomposition ability of the fungus community                        \\
+            $n$              & Total number of fungus populations in the community                        \\
+            $e_i$            & Decomposition ability of the $i$-th fungus population                      \\
+            $\boldsymbol{e}$ & Vector containing the ability of decomposition of all fungus populations   \\
+            $x_i$            & Population density of the $i$-th fungus populations                        \\
+            $\boldsymbol{x}$ & Vector containing the population density of all fungus population          \\
+            $r_i$            & Intrinsic rate of increase of the $i$-th population                        \\
+            $\boldsymbol{r}$ & Vector containing the intrinsic rate of increase of all fungus populations \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{table}

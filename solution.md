@@ -58,6 +58,19 @@ The registration fee for MCM/ICM is $100 per team. Please register only the team
 
 # 3 The Model
 
+$$
+E(t) = e_1x_1 + e_2x_2
+$$
+
+$$
+\frac{dx_1}{dt} = \beta_1x_1\left(1 - \frac{x_1}{x_{m1}}\right) + (\alpha_1- \beta_2)x_1 - (\alpha_2 - \beta_1)x_2
+$$
+
+$$
+\frac{d\boldsymbol{x}}{dt} =
+(\boldsymbol{\beta}-\boldsymbol{\alpha})7\cdot\boldsymbol{x} +
+$$
+
 ---
 
 ## 3.1 XXXX

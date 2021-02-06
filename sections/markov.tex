@@ -1,0 +1,101 @@
+\section{Homeostasis of the Community with Markov Chain Model}\label{sec:markov}
+
+
+\subsection{Feasibility of utilizing Markov chain model in fungus community}
+
+Since it is presumably impractical for finding the symbolic solution of the LV model, Markov chain model is introduced for predicting the stable state, that is, the relatively static composition of the fungus populations density in the community.
+
+\begin{definition}
+    Once the community component is stabilized, if possible, the population density of each fungi specie interchange in a rate proportional to its own population density, the coefficient is a constant.
+\end{definition}
+
+\paragraph{Justification} Though the Markov chain model is based on discrete time and state space, since the stable state is all we concerned in this attempt, we can still utilize such notion.
+
+\begin{figure}\caption{A Markov chain diagram containing 3 fungus species}\label{fig:markov3}
+    \begin{center}
+        \begin{tikzpicture}
+            \node[draw, circle] at (0, 0)     (1)     {fungi 1};
+            \node[draw, circle] at (6, 0)     (2)     {fungi 2};
+            \node[draw, circle] at (3, -5.196) (3) {fungi 3};
+    
+            \draw[every loop, auto=right, line width=0.5mm]
+                (1) edge[bend right=20]            node {$\gamma_{13}$} (3)
+                (1) edge[bend right=20, auto=left] node {$\gamma_{12}$} (2)
+                (2) edge[bend right=20]            node {$\gamma_{21}$} (1)
+                (2) edge[bend right=20, auto=left] node {$\gamma_{23}$} (3)
+                (3) edge[bend right=20]            node {$\gamma_{32}$} (2)
+                (3) edge[bend right=20, auto=left] node {$\gamma_{31}$} (1);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+
+\subsection{Constructing Markov chain for fungus community}
+
+Consider a given time interval $T$, and the population density of each fungus species at time $t$ is denoted as $\boldsymbol{x(t)} = (x_1(t), x_2(t), \cdots, x_n(t))^T$. In the evolution process of the community, at each time interval, a specific percentage of fungi $i$ is remained, and others can be considered as transformed into population density of other species of fungus.
+
+For a simple dual-species system, such transition relation can be expressed as
+
+\begin{equation}
+    \left\{\begin{aligned} &
+        x_1(t+T) = \gamma_{11}x_1(t) + \gamma_{21}x_2(t) \\ &
+        x_2(t+T) = \gamma_{22}x_2(t) + \gamma_{12}x_1(t)
+    \end{aligned}\right..
+\end{equation}
+
+More generally, in an $n$-species community, the system is characterized by
+
+\begin{equation}
+    \left\{\begin{aligned} &
+        x_1(t+T) = \gamma_{11}x_1(t) + \cdots + \gamma_{n1}x_n(t) \\ & \cdots \\ &
+        x_i(t+T) = \sum_{j=1}^n \gamma_{ij}x_j \\ & \cdots \\ &
+        x_n(t+T) = \gamma_{n1}x_1(t) + \cdots + \gamma_{nn}x_n(t).
+    \end{aligned}\right.
+\end{equation}
+
+Which can be further simplified with matrix notation.
+
+\begin{equation}\label{eq:trans}
+    \boldsymbol{x}(t+T) = \boldsymbol{Y}\boldsymbol{x}(t).
+\end{equation}
+
+In which, the matrix $\boldsymbol{Y}_{n\times n}$ is defined to be the transition matrix of the system, with element $\gamma_{ij}$ denoting the transition rate from fungus specie $i$ to $j$.
+
+\begin{equation}
+    \boldsymbol{Y} =
+    \begin{bmatrix}
+        \gamma_{11} & \gamma_{12} & \cdots & \gamma_{1n} \\
+        \gamma_{21} & \ddots & & \vdots \\
+        \vdots & & \ddots & \vdots \\
+        \gamma_{n1} & \cdots & \cdots & \gamma_{nn}
+    \end{bmatrix}
+\end{equation}
+
+Note that the transition rate in the biological configuration considerably differs from that in stochastic process. In a typical Markov chain model, each element in the transition matrix represents a certain probability of transition or decision towards another state. To implement this model in a continuous mathematical configuration, adjustments must be and evidently can be made to the definition of the population density $x_i$ itself, ensuring that a unit of population density of different species of fungus takes up the same amount of resources in the system. With such adjustment, it is guaranteed that, for each element and row of the transition matrix, we have
+
+\begin{equation}\label{eq:norm}
+    \left\{\begin{aligned} &
+        \boldsymbol{Y}_{ij} \in [0,\ 1],\ i,\ j\in\{1,\ 2,\ \cdots,\ n\} \\ &
+        \sum_{j=1}^n \boldsymbol{Y}_{ij} = 1,\ i\in\{1,\ 2,\ \cdots,\ n\}.
+    \end{aligned}\right.
+\end{equation}
+
+In addition, though during the growth process of the populations, and in macroscopic view the early stage of the decomposition, the transition matrix may not satisfy condition \eqref{eq:norm}, and the sum of the rows could possibly even vary with time, it is shown that the final homeostasis is only related to the transition matrix after the community enters Markov process.
+
+
+\subsection{The homeostasis of the system}
+
+Once the total population density reached the overall carrying capacity of the system, condition \eqref{eq:norm} is automatically satisfied. It is obvious that, according to \eqref{eq:trans}, after $nT$ time, the the population density in the community turns into
+
+\begin{equation}
+    \boldsymbol{x}(t+nT) =
+    \boldsymbol{Y}\boldsymbol{x}[t+(n-1)T] = \cdots =
+    \boldsymbol{Y}^n\boldsymbol{x}(t).
+\end{equation}
+
+For solving this model, consider the eigenvalues and eigenvectors of the transition matrix\dots
+
+\begin{equation}
+    \boldsymbol{Y}\boldsymbol{z} = \lambda\boldsymbol{z} \Rightarrow
+    
+\end{equation}

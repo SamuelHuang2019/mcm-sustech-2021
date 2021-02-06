@@ -12,7 +12,6 @@
 \usepackage{float}
 \usepackage[toc,page,title,titletoc,header]{appendix}
 \usepackage[font=small,labelfont=bf]{caption}
-\usepackage{graphicx}
 \usepackage{ifthen}
 \usepackage{pgfplots}
 \usepackage{amsmath,amssymb,amsthm}
@@ -24,12 +23,16 @@
 \usepackage{minted}
 \usepackage{booktabs}
 \usepackage{indentfirst}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usetikzlibrary{positioning}
 
 \newcommand{\Problem}{B}
 \newcommand{\Team}{2122216}
 
-\numberwithin{equation}{section} % 公式编号带小节编号
-\graphicspath{{figures/}}        % 设置默认图片路径
+\numberwithin{equation}{section}
+\graphicspath{{figures/}}
 \lhead{Team \Team}
 \rhead{}
 \cfoot{}
@@ -37,10 +40,9 @@
 % \setlength{\parindent}{2em}
 \setlength{\parskip}{0.5em}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{definition}{Definition}
+\theoremstyle{definition}
+\newtheorem{definition}{\noindent Assumption}
+
 \pagestyle{fancy}
 \rhead{Page \thepage\ of \pageref{LastPage}}
 
@@ -75,7 +77,7 @@
 % Table of Contents
 \clearpage
 \newpage
-\setcounter{page}{1}
+% \setcounter{page}{1}
 \tableofcontents
 \newpage
 
@@ -83,7 +85,8 @@
 % Contents
 \input{sections/introduction}
 \input{sections/assumption}
-\input{sections/model}
+\input{sections/growth}
+\input{sections/markov}
 \input{sections/solution}
 \input{sections/analysis}
 \input{sections/conclusion}
