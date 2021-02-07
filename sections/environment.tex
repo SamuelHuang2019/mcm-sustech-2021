@@ -1,4 +1,52 @@
-\section{Environment}\label{sec:model2}
+\section{Environmental Effect on the Decay Ability of the Community}\label{sec:env}
 
+The purpose of this section, is to describe the environment affect the decomposition ability of a fungi community.
 
-\subsubsection{Lotka-Volterra Model for Dual-Species System}
+Since in this literature, moisture tolerance is the only trait of fungi concerned related to environment, we focus on how environment interact with this property.
+
+\subsection{Environmental impact on the hyphal extension rate}
+
+Moisture tolerance is defined as the difference of each isolate’s competitive ranking and their moisture niche width. Competitive ranking can be obtained through pair wise competition experiment, and won't be affect by environment conditions since it is a relative ranking relation between species. Moisture niche width is the immediate property representing how tolerant a specie can be against varying environmental moisture condition, which is defined as the difference between the maximum and minimum moisture levels in which half of a fungal community can maintain its fastest growth rate.
+
+According to \eqref{eq:decay-ability}, the hyphal extension rate and moisture niche width are implicitly related, and can be quantified as
+
+\begin{equation}
+    k_2(c - d) + b_2 = \ln k_1r \Rightarrow
+    r = \frac{1}{k_1} \exp[k_2(c -d) +b_2].
+\end{equation}
+
+\begin{definition}
+    The hyphal extension rate of fungi community is affected by the moisture range of the environment. When the humidity in the environment fluctuates in a remarkable range, the growth of fungi is depressed. 
+\end{definition}
+\paragraph*{Justification} In this model, the community can be treated as a whole, since moisture tolerance only has to do with the niche width, not the optimal moisture condition. The optimal moisture condition and the moisture niche can be varied a lot in a fungi community for different species, but the global trend with respect to the change of environment can be predicted in such assumption.
+
+Define the moisture range in a certain environment as $w$, then the hyphal extension rate expression can be expressed as
+
+\begin{equation}
+    \hat{r} =
+    \frac{1}{k_1} \exp[k_2(c -d) +b_2]\cdot
+    \frac{d}{w + d}.
+\end{equation}
+
+The meaning of the extra factor in the equation is, if the environmental moisture width is exactly zero, then the hyphal extension rate of the community is considered as being right in the optimal moisture width of the system as a whole. Otherwise, if the environmental moisture moisture width is equal to the feature moisture niche width of the community, then the hyphal extension rate is halved, which is consistent with the definition of niche width.
+
+In addition, if the initial hyphal extension rate in a certain condition is available and denoted as $r_0$, we can predict the same trait in other environment as
+
+\begin{equation}\label{eq:env}
+    \hat{r} = \frac{d}{w + d}r_0.
+\end{equation}
+
+\subsection{Applying the data in various climates}
+
+After collecting and processing climate property data, we can obtain the moisture width of different climate, then apply these data to the model.
+
+\begin{table}[h]\caption{The moisture width $w$ in different environments}
+    \centering
+    \begin{tabular}{c|ccccc}
+        \toprule
+        climate        & arid & semi-arid & temperate & arboreal & tropical rain forests \\
+        \midrule
+        moisture width &      &           &           &          &                       \\
+        \bottomrule
+    \end{tabular}
+\end{table}

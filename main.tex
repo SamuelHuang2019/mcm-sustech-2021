@@ -1,34 +1,30 @@
 \documentclass[12pt]{article}
 \usepackage{geometry}
 \geometry{left=1in,right=0.75in,top=1in,bottom=1in}
-\usepackage{lastpage}
-\usepackage{fancyhdr}
 \usepackage{color}
 \usepackage{longtable}
-\usepackage{graphicx}
 % \usepackage{hyperref}
 \usepackage[hidelinks]{hyperref}
-\usepackage{tabularx}
 \usepackage{float}
 \usepackage[toc,page,title,titletoc,header]{appendix}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{ifthen}
-\usepackage{pgfplots}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{fancyhdr}
-\usepackage{pgfplots}
 
+\usepackage{fancyhdr}
 \usepackage{minted}
 \usepackage{booktabs}
 \usepackage{indentfirst}
 \usepackage{multirow}
 \usepackage{tikz}
+\usepackage{pgfplots}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{lastpage}
 \usetikzlibrary{positioning}
 
-\newcommand{\Problem}{B}
+\newcommand{\Problem}{A}
 \newcommand{\Team}{2122216}
 
 \numberwithin{equation}{section}
@@ -54,18 +50,18 @@
 \centerline{
 	\begin{tabular}{*3{c}}
 		\parbox[t]{0.3\linewidth}{
-			\begin{center}\textbf{Problem Chosen} \\
+		\begin{center}\textbf{Problem Chosen} \\
 				\Large \textcolor{red}{\Problem}
 			\end{center}} &
 		\parbox[t]{0.3\linewidth}{
-			\begin{center}
+		\begin{center}
 				\textbf{2020\\ MCM/ICM\\ Summary Sheet}
 			\end{center}} &
 		\parbox[t]{0.3\linewidth}{
-			\begin{center}
+		\begin{center}
 				\textbf{Team Control Number} \\
 				\Large \textcolor{red}{\Team}
-			\end{center}} \\
+			\end{center}}   \\
 		\hline
 	\end{tabular}
 }
@@ -85,14 +81,18 @@
 % Contents
 \input{sections/introduction}
 \input{sections/assumption}
+\input{sections/rate}
 \input{sections/growth}
 \input{sections/markov}
-\input{sections/solution}
+\input{sections/environment}
+\input{sections/combination}
 \input{sections/analysis}
 \input{sections/conclusion}
-\input{sections/future}
 
+
+\newpage
 \input{sections/article}
+
 
 % References
 \newpage

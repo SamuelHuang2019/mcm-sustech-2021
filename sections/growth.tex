@@ -1,7 +1,7 @@
-\section{Competition Model of the Growth of Fungus Community}\label{sec:LV}
+\section{Competition Model of the Growth of Fungi Community}\label{sec:LV}
 
 
-\subsection{Lotka-Volterra Model for Dual-Species System}
+\subsection{Traditional Lotka-Volterra model for dual-species system}
 
 In the early twentieth century, Alfred Lotka and Vito Volterra simultaneously derived a model that described how competition affects population growth from the perspective of differential equations, which is now known as the Lotka-Volterra, or LV model.
 
@@ -22,7 +22,7 @@ The extra term places a limit on exponential growth, and the resulting equation 
 
 In a dual-species system, the resistance against the growth of one population comes not only from the environment, but also another specie. It is natural that, when specie 2 has larger population density, specie 1 will be in face of larger competitive pressure, and similar for species 2. Such notion is also capable for intra-specie competition. Combining the inter-species and intr-specie competition into \eqref{eq:logistic}, obtains the differential equations set
 
-\begin{equation}\label{eq:dual}
+\begin{equation}\label{eq:lv-dual}
     \left\{\begin{aligned}     &
         \frac{\mathrm{d}x_1}{\mathrm{d}t} =
         r_1x_1\left(1 - \frac{\alpha_{11}x_1 + \alpha_{12}x_2}{K_1}\right) \\ &
@@ -34,11 +34,11 @@ In a dual-species system, the resistance against the growth of one population co
 Which is the model for dual-species competition. Note that, neither Lotka nor Volterra explained this equation from the perspective of ecology, it is Tilman who made a convincing interpretation. His resource-based model included resources requirement, consumption and supply, which is concise and rigorous but not the topic of this literature.
 
 
-\subsection{Extended Lotka-Volterra Model for Multi-Species}
+\subsection{Extended Lotka-Volterra model for multi-species}
 
-Based on LV model, we extended \eqref{eq:dual} to a multi-species system with $n$ various populations.
+Based on LV model, we extended \eqref{eq:lv-dual} to a multi-species system with $n$ various populations.
 
-\begin{equation}\label{eq:dual}
+\begin{equation}\label{eq:lv-multi}
     \left\{\begin{aligned}     &
     \frac{\mathrm{d}x_1}{\mathrm{d}t} =
     r_1x_1\left(1 - \frac{\sum_{j=1}^n \alpha_{1j}x_j}{K_1}\right) \\ & \cdots \\ &
@@ -51,11 +51,13 @@ Based on LV model, we extended \eqref{eq:dual} to a multi-species system with $n
 
 The equations set can be simplified with matrix differential equations as
 
-\begin{equation}\label{eq:mat}
+\begin{equation}\label{eq:lv-mat}
     \frac{\mathrm{d}\boldsymbol{x}}{\mathrm{d}t} =
     \boldsymbol{r}\cdot\boldsymbol{x}
     \left[\boldsymbol{1} - (\boldsymbol{Ax})\cdot\hat{\boldsymbol{K}}\right].
 \end{equation}
+
+% TODO: fix the ones matrix notation
 
 In which the matrix $\hat{\boldsymbol{K}}$ is the element-wise reciprocal of $\boldsymbol{K}$, that is, $\hat{\boldsymbol{K}}_{ij}\boldsymbol{K}_{ij} = 1$. 
 
@@ -82,4 +84,63 @@ Consider a quad-species system, with the parameters shown in table \ref{tb:quad-
 % TODO: Really that hard? Is there a solution?
 
 
-% \subsection{Numerical}
+\subsection{Adapted Lotka-Volterra model for fungi community}
+
+As shown in \eqref{eq:lv-mat}, a significant drawback of LV model is that, in total $n^2 + n$ extra defined parameters, symbolizing the stress exerted from each specie onto each another and the carrying capacity of the environment for each specie are needed. It would be impractical for our model if such amount of factors without support from experimental result need to be considered.
+
+\begin{definition}
+    The stress from other species of fungi can be characterized by the ratio of the product of relative moisture tolerance and biomass of the two species, and normalized with an exponential function.
+\end{definition}
+\paragraph*{Justification} The relative moisture tolerance is defined as the difference of each isolate’s competitive ranking and their moisture niche width, indicating the significant tolerance-dominance trade-off property in the competition of fungi. While incorporating the effect of multiple species, the form of the differential equations are roughly consistent with LV model.
+
+Considering features of various types of fungi with available data, and the compatibility to the composition rate model constructed, traditional LV model in dual-species case is redefined to adapt the fungi community circumstances as follows.
+
+\begin{equation}
+    \left\{\begin{aligned}         &
+        \frac{\mathrm{d}x_1}{\mathrm{d}t} =
+        r_1x_1\exp\left(
+        1 - \frac{m_1x_1}{m_1x_1}\cdot
+        \frac{m_2x_2}{m_1x_1}
+        \right) \\ &
+        \frac{\mathrm{d}x_2}{\mathrm{d}t} =
+        r_2x_2\exp\left(
+        1 - \frac{m_1x_1}{m_2x_2}\cdot
+        \frac{m_2x_2}{m_2x_2}
+        \right)
+    \end{aligned}\right.
+\end{equation}
+
+When extended to multiple species, we have
+
+\begin{equation}
+    \left\{\begin{aligned}         &
+        \frac{\mathrm{d}x_1}{\mathrm{d}t} =
+        r_1x_1\exp\left(
+            1 - \frac{m_1x_1}{m_1x_1}\cdots
+            \frac{m_nx_n}{m_1x_1}
+        \right) \\ & \cdots \\ &
+        \frac{\mathrm{d}x_i}{\mathrm{d}t} =
+        r_ix_i\exp\left(
+            1 - \frac{m_1x_1}{m_ix_i}\cdots
+            \frac{m_jx_j}{m_ix_i}\cdots
+            \frac{m_nx_n}{m_ix_i}
+        \right) \\ & \cdots \\ &
+        \frac{\mathrm{d}x_n}{\mathrm{d}t} =
+        r_nx_n\exp\left(
+            1 - \frac{m_1x_1}{m_nx_n}\cdots
+            \frac{m_nx_n}{m_nx_n}
+        \right).
+    \end{aligned}\right.
+\end{equation}
+
+Or simply expressed as
+
+\begin{equation}\label{eq:LV-adapt}
+    \frac{\mathrm{d}x_i}{\mathrm{d}t} =
+    r_ix_i\exp\left(
+            1 - \frac{\prod_{j=1}^n m_j}{m_i^n}\cdot
+            \frac{\prod_{j=1}^n x_j}{x_i^n}
+        \right).
+\end{equation}
+
+% TODO: simulate numerical solution of a multi-species case 

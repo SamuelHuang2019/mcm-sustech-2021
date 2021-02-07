@@ -11,12 +11,12 @@ Since it is presumably impractical for finding the symbolic solution of the LV m
 
 \paragraph{Justification} Though the Markov chain model is based on discrete time and state space, since the stable state is all we concerned in this attempt, we can still utilize such notion.
 
-\begin{figure}\caption{A Markov chain diagram containing 3 fungus species}\label{fig:markov3}
+\begin{figure}\caption{A Markov chain diagram containing 3 fungi species}\label{fig:markov3}
     \begin{center}
         \begin{tikzpicture}
-            \node[draw, circle] at (0, 0)     (1)     {fungi 1};
-            \node[draw, circle] at (6, 0)     (2)     {fungi 2};
-            \node[draw, circle] at (3, -5.196) (3) {fungi 3};
+            \node[draw, circle] at (0, 0)     (1)     {fungus 1};
+            \node[draw, circle] at (6, 0)     (2)     {fungus 2};
+            \node[draw, circle] at (3, -5.196) (3) {fungus 3};
     
             \draw[every loop, auto=right, line width=0.5mm]
                 (1) edge[bend right=20]            node {$\gamma_{13}$} (3)
@@ -32,9 +32,11 @@ Since it is presumably impractical for finding the symbolic solution of the LV m
 
 \subsection{Constructing Markov chain for fungus community}
 
-Consider a given time interval $T$, and the population density of each fungus species at time $t$ is denoted as $\boldsymbol{x(t)} = (x_1(t), x_2(t), \cdots, x_n(t))^T$. In the evolution process of the community, at each time interval, a specific percentage of fungi $i$ is remained, and others can be considered as transformed into population density of other species of fungus.
+Consider a given time interval $T$, and the population density of each fungus species at time $t$ is denoted as $\boldsymbol{x}(t) = [x_1(t), x_2(t), \cdots, x_n(t)]^T$. In the evolution process of the community, at each time interval, a specific percentage of fungi $i$ is remained, and others can be considered as transformed into population density of other species of fungus.
 
 For a simple dual-species system, such transition relation can be expressed as
+
+% TODO: Redefine the matrix
 
 \begin{equation}
     \left\{\begin{aligned} &
@@ -73,29 +75,58 @@ In which, the matrix $\boldsymbol{Y}_{n\times n}$ is defined to be the transitio
 
 Note that the transition rate in the biological configuration considerably differs from that in stochastic process. In a typical Markov chain model, each element in the transition matrix represents a certain probability of transition or decision towards another state. To implement this model in a continuous mathematical configuration, adjustments must be and evidently can be made to the definition of the population density $x_i$ itself, ensuring that a unit of population density of different species of fungus takes up the same amount of resources in the system. With such adjustment, it is guaranteed that, for each element and row of the transition matrix, we have
 
-\begin{equation}\label{eq:norm}
+\begin{equation}\label{eq:markov-norm}
     \left\{\begin{aligned} &
         \boldsymbol{Y}_{ij} \in [0,\ 1],\ i,\ j\in\{1,\ 2,\ \cdots,\ n\} \\ &
         \sum_{j=1}^n \boldsymbol{Y}_{ij} = 1,\ i\in\{1,\ 2,\ \cdots,\ n\}.
     \end{aligned}\right.
 \end{equation}
 
-In addition, though during the growth process of the populations, and in macroscopic view the early stage of the decomposition, the transition matrix may not satisfy condition \eqref{eq:norm}, and the sum of the rows could possibly even vary with time, it is shown that the final homeostasis is only related to the transition matrix after the community enters Markov process.
+In addition, though during the growth process of the populations, and in macroscopic view the early stage of the decomposition, the transition matrix may not satisfy condition \eqref{eq:markov-norm}, and the sum of the rows could possibly even vary with time, it is shown that the final homeostasis is only related to the transition matrix after the community enters Markov process.
 
+
+\subsection{Incorporate hyphal extension rate and moisture tolerance}
+
+To model the system of fungi community, the transition matrix is further specified as follows in order to incorporate traits we concerned.
+
+\begin{equation}\label{eq:gamma}
+    \gamma_{ij} = \frac{r_i/r_j}{\sum_{k=1}^n r_i/r_k}.
+\end{equation}
+
+The hyphal extension rate is a significant trait characterizing the \textbf{combative ability} of fungus, the ratio represents how combative a fungus can be when replacing another fungus isolate. It can be easily verified that, definition \eqref{eq:gamma} is normalized for keeping consistent with prerequisite \eqref{eq:markov-norm}.
 
 \subsection{The homeostasis of the system}
 
-Once the total population density reached the overall carrying capacity of the system, condition \eqref{eq:norm} is automatically satisfied. It is obvious that, according to \eqref{eq:trans}, after $nT$ time, the the population density in the community turns into
+% Once the total population density reached the overall carrying capacity of the system, condition \eqref{eq:norm} is automatically satisfied. It is obvious that, according to \eqref{eq:trans}, after $nT$ time, the the population density in the community turns into
 
-\begin{equation}
-    \boldsymbol{x}(t+nT) =
-    \boldsymbol{Y}\boldsymbol{x}[t+(n-1)T] = \cdots =
-    \boldsymbol{Y}^n\boldsymbol{x}(t).
-\end{equation}
+% \begin{equation}
+%     \boldsymbol{x}(t+nT) =
+%     \boldsymbol{Y}\boldsymbol{x}[t+(n-1)T] = \cdots =
+%     \boldsymbol{Y}^n\boldsymbol{x}(t).
+% \end{equation}
 
-For solving this model, consider the eigenvalues and eigenvectors of the transition matrix\dots
+% For solving this model, consider the eigenvalues and eigenvectors of the transition matrix\dots
 
-\begin{equation}
-    \boldsymbol{Y}\boldsymbol{z} = \lambda\boldsymbol{z} \Rightarrow
-    
-\end{equation}
+% \begin{equation}
+%     \boldsymbol{Y}\boldsymbol{z} = \lambda\boldsymbol{z} \Rightarrow
+% \end{equation}
+
+In a Markov process, the final homeostasis is only related to the transition matrix, but cannot be explicitly expressed.
+
+We postulate a quad-species fungi community, among them two in the top and two in the bottom of the competitive ranking, to visualize and verify this model.
+
+\begin{table}\caption{The four species chosen in verifying the model}
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        Specie & Competitive Ranking & Hyphal Extension Rate \\
+        \midrule
+        Phlebia acerina MR4280 B9G & 1 & 8.75 \\
+        Phlebiopsis flavidoalba FP150451 A8G & 0.9864 & 10.8 \\
+        Armillaria gallica HHB12551 C6C & 0 & 0.49 \\
+        Armillaria tabescens TJV93 261 A1E & 0 & 1.07 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% TODO: Give example
