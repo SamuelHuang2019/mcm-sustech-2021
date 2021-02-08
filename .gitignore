@@ -140,4 +140,9 @@ dmypy.json
 *.out
 *.toc
 *.synctex.gz
+*-blx.bib
+*.run.xml
+*.bbl
+*.blg
+*.toc
 _minted-main
