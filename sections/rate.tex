@@ -20,12 +20,12 @@ In this problem, the \textbf{hyphal extension rate} and \textbf{moisture toleran
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figure1.jpg}
-        \caption{The relationship between the hyphal extension rate (mm/day) of various fungi and the resulting wood decomposition rate (\% mass loss over 122 days) at various temperatures. This figure is adapted from \cite{Lustenshouwer}.}\label{fig:hyphal}
+        \caption{The relationship between the hyphal extension rate (mm/day) of various fungi and the resulting wood decomposition rate (\% mass loss over 122 days) at various temperatures. This figure is adopted from \cite{Lustenshouwer}.}\label{fig:hyphal}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figure2.jpg}
-        \caption{The relationship between the moisture tolerance (difference of each isolate’s competitive ranking and their moisture niche width, both scaled to $[0,1]$) of various fungi and the resulting wood decomposition rate (\% mass loss over 122 days, log transformed). This figure is adapted from \cite{Lustenshouwer}.}\label{fig:moisture}
+        \caption{The relationship between the moisture tolerance (difference of each isolate’s competitive ranking and their moisture niche width, both scaled to $[0,1]$) of various fungi and the resulting wood decomposition rate (\% mass loss over 122 days, log transformed). This figure is adopted from \cite{Lustenshouwer}.}\label{fig:moisture}
     \end{minipage}
 \end{figure}
 
@@ -60,7 +60,7 @@ Note that, in \ref{fig:moisture}, the $x$-axis variable is not exactly the moist
 
 \subsection{Decomposition rate data fitting for single fungus isolate}
 
-Based on the traits data of various species of fungus provided in \cite{Maynard-data}, and the resulting experimental decomposition rate in \cite{Lustenshouwer}, the fitting result is shown in \ref{tb:para-122d} and [].
+Based on the traits data of various species of fungus provided in \cite{Maynard-data}, and the resulting experimental decomposition rate in \cite{Lustenshouwer}, the fitting result is shown in table \ref{tb:para-122d} and figure \ref{fig:decom-hyphal-122d} and \ref{fig:decom-m-122d}.
 
 \begin{figure}
     \centering
@@ -78,19 +78,22 @@ Based on the traits data of various species of fungus provided in \cite{Maynard-
     \end{minipage}
 \end{figure}
 
-% TODO: add picture
-
 \begin{table}
-    \caption{The fitted parameters for the decay ability of an isolate over a short period}
-    \centering
-    \begin{tabular}{cccc}
-        \toprule
-        $k_1$  & $b_1$  & $k_2$  & $b_2$  \\
-        \midrule
-        1.6850 & 3.4082 & 0.5831 & 0.4896 \\
-        \bottomrule
-    \end{tabular}\label{tb:para-122d}
+    \begin{minipage}{0.5\textwidth}
+        \caption{The fitted parameters for the decay ability of an isolate over a short period}
+        \label{tb:para-122d}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}\centering
+        \begin{tabular}{cccc}
+            \toprule
+            $k_1$  & $b_1$  & $k_2$  & $b_2$  \\
+            \midrule
+            1.6850 & 3.4082 & 0.5831 & 0.4896 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
 \end{table}
+
 
 \subsection{Extending the model to multi-species system}
 
@@ -99,7 +102,7 @@ Based on the traits data of various species of fungus provided in \cite{Maynard-
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figure3.png}
-        \caption{The decomposition of logs increases with the hyphal extension rate of the fungal community that colonized them. This figure is adapted from \cite{Lustenshouwer}.}
+        \caption{The decomposition of logs increases with the hyphal extension rate of the fungal community that colonized them. This figure is adopted from \cite{Lustenshouwer}.}
         \label{fig:community}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
@@ -121,23 +124,24 @@ The decay ability of a fungi community can be described quantitatively as the fo
     k_3\dfrac{\sum_{i=1}^n r_ix_i}{\sum_{i=1}^n x_i} + b_3.
 \end{equation}
 
-% TODO: data fitting
-
-% TODO: relation with time
-
 Research conducted in \cite{Lustenshouwer} presents the data obtained from experimental results on various wood substrate for 3 years or 5 years. With the data presented in \cite{Maynard-data}, the coefficient is roughly determined as in \ref{tb:para-year}, and the result is shown in figure \ref{fig:decom-year}.
 
 \begin{table}
-    \caption{The fitted parameters for the decay ability of a community over a long period}
-    \centering
-    \begin{tabular}{c|cc}
-        \toprule
-        Years & $k_3$ & $b_3$ \\
-        \midrule
-        3     & 1.539 & 17.32 \\
-        5     & 1.237 & 57.87 \\
-        \bottomrule
-    \end{tabular}\label{tb:para-year}
+    \begin{minipage}{0.6\textwidth}
+        \caption{The fitted parameters for the decay ability of a community over a long period}
+        \label{tb:para-year}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}\centering
+        \centering
+        \begin{tabular}{c|cc}
+            \toprule
+            Years & $k_3$ & $b_3$ \\
+            \midrule
+            3     & 1.539 & 17.32 \\
+            5     & 1.237 & 57.87 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
 \end{table}
 
 For solving this model for practical prediction of the decay ability of fungi community, each $x_i$ needs to be specified. This part is discussed in the following sections.

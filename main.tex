@@ -23,6 +23,7 @@
 \usepackage{tabularx}
 \usepackage{lastpage}
 \usepackage{cite}
+\usepackage{makecell}
 % \usepackage[backend=bibtex]{biblatex}
 \usetikzlibrary{positioning}
 
@@ -57,7 +58,7 @@
 			\end{center}} &
 		\parbox[t]{0.3\linewidth}{
 		\begin{center}
-				\textbf{2020\\ MCM/ICM\\ Summary Sheet}
+				\textbf{2021\\MCM/ICM\\Summary Sheet}
 			\end{center}} &
 		\parbox[t]{0.3\linewidth}{
 		\begin{center}
@@ -72,10 +73,12 @@
 \input{sections/summary}
 
 
+\setlength{\parskip}{0.25em}
 % Table of Contents
 \clearpage
 % \setcounter{page}{1}
 \tableofcontents
+\setlength{\parskip}{0.5em}
 
 
 % Contents
@@ -94,11 +97,14 @@
 \input{sections/article}
 
 
+\setlength{\parskip}{0.25em}
 % References
 \newpage
 \nocite{*}
 \bibliographystyle{plain}
 \bibliography{biblo}
+\setlength{\parskip}{0.5em}
+
 
 % Appendix 
 \newpage

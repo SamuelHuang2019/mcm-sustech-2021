@@ -82,14 +82,14 @@ The growth process of fungus community considering competition is characterized 
 % TODO: If possible, give a solution example
 
 
-\subsection{Adapted Lotka-Volterra model for fungi community}
+\subsection{Adaptive Lotka-Volterra model for fungi community}
 
 As shown in \eqref{eq:lv-mat}, a significant drawback of LV model is that, in total $n^2 + n$ extra defined parameters, symbolizing the stress exerted from each specie onto each another and the carrying capacity of the environment for each specie are needed. It would be impractical for our model if such amount of factors without support from experimental result need to be considered.
 
 \begin{definition}
     The stress from other species of fungi can be characterized by the ratio of the product of relative moisture tolerance and biomass of the two species, and normalized with an exponential function.
+    \textbf{Justification} The relative moisture tolerance is defined as the difference of each isolate’s competitive ranking and their moisture niche width, indicating the significant tolerance-dominance trade-off property in the competition of fungi. While incorporating the effect of multiple species, the form of the differential equations are roughly consistent with LV model.
 \end{definition}
-\paragraph*{Justification} The relative moisture tolerance is defined as the difference of each isolate’s competitive ranking and their moisture niche width, indicating the significant tolerance-dominance trade-off property in the competition of fungi. While incorporating the effect of multiple species, the form of the differential equations are roughly consistent with LV model.
 
 Considering features of various types of fungi with available data, and the compatibility to the composition rate model constructed, traditional LV model in dual-species case is redefined to adapt the fungi community circumstances as follows.
 

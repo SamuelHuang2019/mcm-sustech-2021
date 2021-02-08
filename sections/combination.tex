@@ -26,12 +26,15 @@ In \eqref{eq:LV-adapt}, conduct the same substitution, obtains
 Also, the transition matrix redefined in \eqref{eq:gamma} is again transformed into
 
 \begin{equation}\label{eq:markov-env}
-    \gamma_{ij} = 
-    \frac{\hat{r}_i}{\sum_{k=1}^n \hat{r}_k} =
-    \frac{\dfrac{d_ir_{ik}}{w + d_i}}
-    {\sum\limits_{k=1}^n \dfrac{d_ir_{ik}}{w + d_i}}.
+    \hat{\gamma}_{ij} =
+    \frac{e^{- \hat{r}_i / \hat{r}_j}}{\sum_{k=1}^n e^{- \hat{r}_i / \hat{r}_k}} =
+    \frac{\exp\left(
+        -\left.\dfrac{d_ir_i}{w + d_i} \middle/ \dfrac{d_jr_j}{w + d_j}\right.
+        \right)}
+    {\sum\limits_{k=1}^n\exp\left(
+        -\left.\dfrac{d_ir_i}{w + d_i} \middle/ \dfrac{d_kr_k}{w + d_k}\right.
+        \right)}.
 \end{equation}
-
 
 Equation \eqref{eq:dcomm-env} determines the ability of a fungi community to decompose ground litter and woody fibers. In which, $r_i$, $d_i$ are the traits of the fungus, $w$ is determined by the environmental condition, $k_3$ is a coefficient and is determined in data fitting as shown in \ref{tb:para-year}. $x_i$ is the only unknown variable representing the biomass of different species of fungus, and can be inferred numerically through \eqref{eq:LV-env}, in which $m_i$ is the trait owned by fungus.
 
@@ -39,7 +42,6 @@ Equation \eqref{eq:dcomm-env} determines the ability of a fungi community to dec
 
 \subsection{Solution of the model at different climatic conditions}
 
-Since a explicit analytical solution cannot be attained from \eqref{eq:LV-env}, yet from model defined in section \ref{sec:markov}, we choose all 34 fungi species with available traits data from [], and evaluate their behaviors under different climatic conditions. For the purpose of brevity, [] model is chosen.
+Since a explicit analytical solution cannot be attained from \eqref{eq:LV-env}, yet from model defined in section \ref{sec:markov}, we choose all 34 fungi species with available traits data from [], and evaluate their behaviors under different climatic conditions. For the purpose of brevity, Markov chain model is chosen.
 
-% TODO: which model? do a simulation in secs before to find out
 % TODO: write script and solve them! plot!
