@@ -1,5 +1,6 @@
 \section{Homeostasis of the Community with Markov Chain Model}\label{sec:markov}
 
+% TODO: Cite references
 
 \subsection{Feasibility of utilizing Markov chain model in fungus community}
 
@@ -36,8 +37,6 @@ Consider a given time interval $T$, and the population density of each fungus sp
 
 For a simple dual-species system, such transition relation can be expressed as
 
-% TODO: Redefine the matrix
-
 \begin{equation}
     \left\{\begin{aligned} &
         x_1(t+T) = \gamma_{11}x_1(t) + \gamma_{21}x_2(t) \\ &
@@ -58,7 +57,7 @@ More generally, in an $n$-species community, the system is characterized by
 Which can be further simplified with matrix notation.
 
 \begin{equation}\label{eq:trans}
-    \boldsymbol{x}(t+T) = \boldsymbol{Y}\boldsymbol{x}(t).
+    \boldsymbol{x}(t+T) = \boldsymbol{x}(t)\boldsymbol{Y}.
 \end{equation}
 
 In which, the matrix $\boldsymbol{Y}_{n\times n}$ is defined to be the transition matrix of the system, with element $\gamma_{ij}$ denoting the transition rate from fungus specie $i$ to $j$.
@@ -90,10 +89,27 @@ In addition, though during the growth process of the populations, and in macrosc
 To model the system of fungi community, the transition matrix is further specified as follows in order to incorporate traits we concerned.
 
 \begin{equation}\label{eq:gamma}
-    \gamma_{ij} = \frac{r_i/r_j}{\sum_{k=1}^n r_i/r_k}.
+    \gamma_{ij} =
+    \mathrm{Softmax}\left(1 - \frac{r_i}{r_j}\right) =
+    \frac{e^{1 - r_i / r_j}}{\sum_{k=1}^n e^{1 - r_i / r_k}} =
+    \frac{e^{- r_i / r_j}}{\sum_{k=1}^n e^{- r_i / r_k}}.
 \end{equation}
 
-The hyphal extension rate is a significant trait characterizing the \textbf{combative ability} of fungus, the ratio represents how combative a fungus can be when replacing another fungus isolate. It can be easily verified that, definition \eqref{eq:gamma} is normalized for keeping consistent with prerequisite \eqref{eq:markov-norm}.
+% In another word, each row in the transition matrix is identical, and the element at each row can be expressed as
+
+% \begin{equation}
+%     \pi(j) = \frac{r_j}{\sum_{k=1}^n r_k}.
+% \end{equation}
+
+In which the $\mathrm{Softmax}$ is for normalizing the data. The hyphal extension rate is a significant trait characterizing the \textbf{combative ability} of fungus, the ratio represents at what rate a fungus will be replaced another fungus isolate. It can be easily verified that, definition \eqref{eq:gamma} is normalized for keeping consistent with prerequisite \eqref{eq:markov-norm}.
+
+The final homeostasis can be expressed simply as
+
+\begin{equation}\label{eq:markov-limit}
+    \boldsymbol{\pi} =
+    \boldsymbol{x}(0)\lim_{n\rightarrow\infty}\boldsymbol{Y}^n.
+\end{equation}
+
 
 \subsection{The homeostasis of the system}
 
@@ -111,13 +127,20 @@ The hyphal extension rate is a significant trait characterizing the \textbf{comb
 %     \boldsymbol{Y}\boldsymbol{z} = \lambda\boldsymbol{z} \Rightarrow
 % \end{equation}
 
-In a Markov process, the final homeostasis is only related to the transition matrix, but cannot be explicitly expressed.
+In a Markov process, the final homeostasis is only related to the transition matrix as shown in \eqref{eq:markov-limit}, but cannot be explicitly expressed.We postulate a quad-species fungi community, among them two in the top and two in the bottom of the competitive ranking, to visualize and verify this model.
 
-We postulate a quad-species fungi community, among them two in the top and two in the bottom of the competitive ranking, to visualize and verify this model.
+The traits value of the four fungi is shown in table \ref{tb:markov-4}, and the transition matrix is
 
-\begin{table}\caption{The four species chosen in verifying the model}
+\[\begin{bmatrix}
+    0.45253 & 0.54712 & 0.00000 & 0.00035 \\
+    0.44167 & 0.55827 & 0.00000 & 0.00006 \\
+    0.32586 & 0.32935 & 0.12678 & 0.21801 \\
+    0.38964 & 0.39879 & 0.04959 & 0.16198
+\end{bmatrix}\]
+
+\begin{table}\caption{The four species chosen in verifying the model}\label{tb:markov-4}
     \centering
-    \begin{tabular}{ccc}
+    \begin{tabular}{c|cc}
         \toprule
         Specie & Competitive Ranking & Hyphal Extension Rate \\
         \midrule
@@ -129,4 +152,13 @@ We postulate a quad-species fungi community, among them two in the top and two i
     \end{tabular}
 \end{table}
 
-% TODO: Give example
+As the iteration proceeds, the system reached the homeostasis gradually, and dominant species substitute weaker species completely in the end.
+
+\begin{figure}\label{fig:markov-4}
+    \begin{minipage}{0.6\textwidth}
+        \includegraphics[width=\textwidth]{markov-4.png}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \caption{The community composition of a quad-species system, after several iteration, the relative biomass reaches homeostasis. 1 - Phlebia acerina, 2 - Phlebiopsis flavidoalba, 3 - Armillaria gallica, 4 - Armillaria tabescens}
+    \end{minipage}
+\end{figure}

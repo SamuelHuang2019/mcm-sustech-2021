@@ -22,6 +22,8 @@
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{lastpage}
+\usepackage{cite}
+% \usepackage[backend=bibtex]{biblatex}
 \usetikzlibrary{positioning}
 
 \newcommand{\Problem}{A}
@@ -72,10 +74,8 @@
 
 % Table of Contents
 \clearpage
-\newpage
 % \setcounter{page}{1}
 \tableofcontents
-\newpage
 
 
 % Contents
@@ -96,13 +96,12 @@
 
 % References
 \newpage
-\bibliographystyle{unsrt}
+\nocite{*}
+\bibliographystyle{plain}
 \bibliography{biblo}
-\newpage
-
 
 % Appendix 
+\newpage
 \input{sections/appendix}
 
 \end{document}
-

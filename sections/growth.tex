@@ -3,7 +3,7 @@
 
 \subsection{Traditional Lotka-Volterra model for dual-species system}
 
-In the early twentieth century, Alfred Lotka and Vito Volterra simultaneously derived a model that described how competition affects population growth from the perspective of differential equations, which is now known as the Lotka-Volterra, or LV model.
+In the early twentieth century, Alfred Lotka and Vito Volterra simultaneously derived a model that described how competition affects population growth from the perspective of differential equations, which is now known as the Lotka-Volterra, or LV model. \cite{LV-model}
 
 First, for single population, if the resources are sufficient enough, the population size, or similarly, density, is expected to grow in the form of
 
@@ -31,7 +31,7 @@ In a dual-species system, the resistance against the growth of one population co
     \end{aligned}\right.
 \end{equation}
 
-Which is the model for dual-species competition. Note that, neither Lotka nor Volterra explained this equation from the perspective of ecology, it is Tilman who made a convincing interpretation. His resource-based model included resources requirement, consumption and supply, which is concise and rigorous but not the topic of this literature.
+Which is the model for dual-species competition. Note that, neither Lotka nor Volterra explained this equation from the perspective of ecology, it is Tilman who made a convincing interpretation. His resource-based model included resources requirement, consumption and supply, which is concise and rigorous but not the topic of this literature. \cite{Tilman}
 
 
 \subsection{Extended Lotka-Volterra model for multi-species}
@@ -57,31 +57,29 @@ The equations set can be simplified with matrix differential equations as
     \left[\boldsymbol{1} - (\boldsymbol{Ax})\cdot\hat{\boldsymbol{K}}\right].
 \end{equation}
 
-% TODO: fix the ones matrix notation
-
 In which the matrix $\hat{\boldsymbol{K}}$ is the element-wise reciprocal of $\boldsymbol{K}$, that is, $\hat{\boldsymbol{K}}_{ij}\boldsymbol{K}_{ij} = 1$. 
 
 The growth process of fungus community considering competition is characterized by this first-order linear ordinary differential equations group, with $n$ unknown functions. Note that while the analytical can be difficult to be found, we can still figure out the development of the system using computer numerically.
 
-Consider a quad-species system, with the parameters shown in table \ref{tb:quad-para}.
+% Consider a quad-species system, with the parameters shown in table \ref{tb:quad-para}.
 
-\begin{table}
-    \begin{center}
-        \caption{The parameters}
-        \begin{tabular}{c|cccccc}
-            \toprule
-                  & $r_i$ & $K_i$ & $\alpha_{i1}$ & $\alpha_{i2}$ & $\alpha_{i3}$ & $\alpha_{i4}$ \\
-            \midrule
-            $x_1$ &       &       &               &               &               &               \\
-            $x_2$ &       &       &               &               &               &               \\
-            $x_3$ &       &       &               &               &               &               \\
-            $x_4$ &       &       &               &               &               &               \\
-            \bottomrule
-        \end{tabular}\label{tb:quad-para}
-    \end{center}
-\end{table}
+% \begin{table}
+%     \begin{center}
+%         \caption{The parameters}
+%         \begin{tabular}{c|cccccc}
+%             \toprule
+%                   & $r_i$ & $K_i$ & $\alpha_{i1}$ & $\alpha_{i2}$ & $\alpha_{i3}$ & $\alpha_{i4}$ \\
+%             \midrule
+%             $x_1$ &       &       &               &               &               &               \\
+%             $x_2$ &       &       &               &               &               &               \\
+%             $x_3$ &       &       &               &               &               &               \\
+%             $x_4$ &       &       &               &               &               &               \\
+%             \bottomrule
+%         \end{tabular}\label{tb:quad-para}
+%     \end{center}
+% \end{table}
 
-% TODO: Really that hard? Is there a solution?
+% TODO: If possible, give a solution example
 
 
 \subsection{Adapted Lotka-Volterra model for fungi community}
