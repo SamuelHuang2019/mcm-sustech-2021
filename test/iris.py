@@ -20,7 +20,7 @@ X, y = load_iris(return_X_y=True)
 X = X[:, :2]
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
-# fit the whole pipeline
+# fit.py the whole pipeline
 pipe.fit(X_train, y_train)
 
 # we can now use it like any other estimator
