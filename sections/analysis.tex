@@ -20,16 +20,14 @@ Consider 4 most combative species with top competitive ranking, and other 2 weak
     \end{tabular}
 \end{table}
 
-\begin{figure}
-    \begin{minipage}{0.6\textwidth}
-        \includegraphics[width=\textwidth]{diversity.png}
-    \end{minipage}
-    \begin{minipage}{0.4\textwidth}
-        \caption{The decomposition rate after a certain time of decay of 4-species and 6-species community. The two extra fungi species are weaker, meaning less competitive in pair wise test.}\label{fig:diversity}
-    \end{minipage}
+\begin{figure}[ht]
+    \caption{The decomposition rate after a certain time of decay of 4-species and 6-species community. The two extra fungi species are weaker, meaning less competitive in pair wise test.}
+    \label{fig:diversity}
+    \centering
+    \includegraphics[width=0.6\textwidth]{diversity.png}
 \end{figure}
 
-Prediction as shown in figure \ref{fig:diversity} suggests that, when relatively weaker species are added into the community, the resulting decomposition efficiency is increased at a certain rate. Such effect becomes more significant when the experiment period extends longer. This result indicate that, biodiversity among the fungi community is positively related to the overall efficiency of a system with respect to the breakdown of ground litter.
+Prediction as shown in figure \ref{fig:diversity} suggests that, when relatively weaker species are added into the community, the resulting decomposition efficiency is increased at a certain rate. Such effect becomes more significant when the experiment period extends longer. This result indicate that, biodiversity among the fungi community is positively related to the overall efficiency of a system with respect to the breakdown of ground litter and woody fibers.
 
 
 \subsection{Sensitivity Analysis}
@@ -43,7 +41,7 @@ The strengths and weaknesses of our model are both evident. For the strengths, o
 
 \begin{itemize}
     \item Extended the Lotka-Volterra model to multi-species cases, proposed the corresponding mathematical description. LV-model plays a significant role in ecological competition, but there not enough researches covering the multi-species condition. More the this, we also derived an adaptive form of LV model for fungi community based on the configuration of this problem.
-    \item Implemented the notion of Markov chain process, to describe the homeostasis of the fungi community. The implementation of a discrete time, discrete status space model in a continuous problem is a bold attempt. Such concept offers brevity and convenience of calculation in our model.
+    \item Implemented the notion of Markov chain process, to describe the homeostasis of the fungi community. The implementation of a discrete time, discrete state space model in a continuous problem is a bold attempt. Such concept offers brevity and convenience of calculation in our model.
     \item Incorporate the varying range of moisture as the affecting environmental factor, consider the fungi community as entirety, which also keeps consistent with the assumption that only the moisture niche width is taking effect.
     \item Also, in many other cases, the community is considered as an entirety, which provides remarkable integrity, convenience and consistency.
 \end{itemize}
